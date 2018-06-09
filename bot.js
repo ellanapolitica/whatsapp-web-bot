@@ -232,19 +232,45 @@
 		// what to answer back?
 		let sendText
 
-		if (lastMsg.toUpperCase().indexOf('@HELP') > -1){
+		if (lastMsg.toUpperCase().indexOf('@ELLA') > -1){
 			sendText = `
-				Cool ${title}! Some commands that you can send me:
-
-				1. *@TIME*
-				2. *@JOKE*`
+				Bem-vindo ${title}! Eu sou a *Ella* uma inteligência artificial que identifica as candidaturas vulneráveis (que não receberam recursos suficientes para campanha). Meu intuito é contribuir com a transparência da candidatura da mulher na política e ajudar você eleitor a votar numa candidata real. Vamos começar...
+				*Qual o estado da candidata?*`
 		}
 
-		if (lastMsg.toUpperCase().indexOf('@TIME') > -1){
+		if (lastMsg.toUpperCase().indexOf('@SP') > -1){
 			sendText = `
-				Don't you have a clock, dude?
+				Qual seu partido de preferência?`
+		}
+		
+		if (lastMsg.toUpperCase().indexOf('@appartidaria') > -1){
+			sendText = `
+				Detectei estas candidatas para eleição:
 
-				*${new Date()}*`
+*APTAS*
+Receberam apoio do partido para suas campanhas
+
+Luciana (SP-appartidaria), deputada estadual
+Aline (SP-appartidaria), deputada federal
+Sandra (SP-appartidaria), senadora
+
+*VULNERÁVEIS*
+Estão em situação de vulnerabilidade eleitoral, sem apoio suficiente do partido para suas campanhas
+
+X Bianca (SP-appartidaria), deputada estadual
+X Janete (SP-appartidaria), deputada federal
+X Bruna (SP-appartidaria), senadora
+
+Ajude estas candidatas a receberam apoio que lhes é de direito!
+
+Saiba mais no nosso site:
+
+www.ellanapolitica.com.br
+
+Quer continuar a consulta?
+
+Digite o estado das candidatas.
+`
 		}
 
 		if (lastMsg.toUpperCase().indexOf('@JOKE') > -1){
